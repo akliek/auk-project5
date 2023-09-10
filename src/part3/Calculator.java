@@ -36,21 +36,21 @@ public class Calculator {
 			operand1 = getUserDouble(scanner);
 			scanner.nextLine();
 
-			System.out.print("Please, enter the operation(+, -, *, \\): ");
+			System.out.print("Please, enter the operation(+, -, *, /): ");
 			operation = getUserString(scanner);
 
 			System.out.print("Please, enter the second operand: ");
 			operand2 = getUserDouble(scanner);
 
 			switch (operation) {
-				case "+" -> System.out.println(operand1 + " + " + operand2 + " = " + (operand1 + operand2));
-				case "-" -> System.out.println(operand1 + " - " + operand2 + " = " + (operand1 - operand2));
-				case "*" -> System.out.println(operand1 + " * " + operand2 + " = " + (operand1 * operand2));
-				case "\\" -> {
+				case "+" -> System.out.printf("%f +  %f = %f\n", operand1, operand2, operand1 + operand2);
+				case "-" -> System.out.printf("%f -  %f = %f\n", operand1, operand2, operand1 - operand2);
+				case "*" -> System.out.printf("%f *  %f = %f\n", operand1, operand2, operand1 * operand2);
+				case "/" -> {
 					if (operand2 == 0) {
 						System.out.println("Division by zero is not allowed.");
 					} else {
-						System.out.println(operand1 + " \\ " + operand2 + " = " + (operand1 / operand2));
+						System.out.printf("%f /  %f = %f\n", operand1, operand2, operand1 / operand2);
 					}
 				}
 				default -> System.out.println("Unknown operation.");
